@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: storage_db       # Имя БД
+      POSTGRES_USER: admin          # Пользователь
+      POSTGRES_PASSWORD: postgres   # Пароль
+    ports:
+      - "5432:5432"                 # Проброс порта (HOST:CONTAINER)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Сохранение данных
+    restart: unless-stopped         # Автоперезапуск
+
+volumes:
+  postgres_data:                    # Том для хранения данных

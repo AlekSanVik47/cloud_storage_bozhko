@@ -1,10 +1,8 @@
-package ru.cloudstorage.cloud_storage_core.entitities;
+package ru.cloudstorage.cloud_storage_core.entities;
 
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.util.List;
 
 @Entity
 @Data

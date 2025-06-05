@@ -3,13 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>ru.cloud-storage-bozhko</groupId>
+        <groupId>ru.cloudstorage</groupId>
         <artifactId>cloud-storage-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>ru.cloud-storage</groupId>
 
     <artifactId>cloud_storage_db</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
@@ -33,11 +34,6 @@
             <version>${postgres.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
 
     <build>
@@ -52,18 +48,6 @@
                             <artifactId>lombok</artifactId>
                         </path>
                     </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

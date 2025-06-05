@@ -1,9 +1,10 @@
-package serviсes;
+package services;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.cloudstorage.cloud_storage_core.entitities.User;
+import ru.cloudstorage.cloud_storage_core.entities.User;
+
 
 import java.util.Collection;
 import java.util.Collections;

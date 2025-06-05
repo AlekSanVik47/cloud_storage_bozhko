@@ -1,7 +1,7 @@
 package ru.cloudstorage.cloud_storage_core.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.cloudstorage.cloud_storage_core.entitities.User;
+import ru.cloudstorage.cloud_storage_core.entities.User;
 
 import java.util.Optional;
 

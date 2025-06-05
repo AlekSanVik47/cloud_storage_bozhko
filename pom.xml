@@ -15,7 +15,19 @@
 		<jakarta.version>3.0.2</jakarta.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
+		<spring-ai.version>1.0.0</spring-ai.version>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.ai</groupId>
+				<artifactId>spring-ai-bom</artifactId>
+				<version>${spring-ai.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<modules>
 		<module>cloud_storage_core</module>
 		<module>cloud_storage_auth</module>
@@ -54,11 +66,6 @@
 					<artifactId>junit</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- Зависимости JUnit -->
@@ -106,6 +113,26 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.14</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.5.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -113,10 +140,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>ru.cloudstorage.cloudstoragebozhko.CloudStorageBozhkoApplication.java</mainClass>
+					<mainClass>ru.cloudstorage.CloudStorageBozhkoApplication</mainClass>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 

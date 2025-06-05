@@ -39,6 +39,7 @@ public class SecurityConfig {
                 . authorizeHttpRequests((authorizeRequests) -> authorizeRequests
                         .requestMatchers("/admin/**").hasRole("ADMIN")  // Доступ для администраторов
                         .requestMatchers("/user/**").hasRole("USER")   // Доступ для пользователей
+                        .requestMatchers("/login").permitAll()
                         .anyRequest().authenticated());  // Остальные запросы требуют аутентификации
         return http.build();
     }

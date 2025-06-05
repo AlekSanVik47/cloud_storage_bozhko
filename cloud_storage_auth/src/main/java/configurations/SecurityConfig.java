@@ -19,22 +19,27 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfig {
     @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails user = User.withUsername("admin")
+        UserDetails admin = User.withUsername("admin")
                 .password(passwordEncoder.encode("password"))
                 .roles("ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(user);
+        UserDetails user = User.withUsername("user")
+                .password(passwordEncoder.encode("password"))
+                .roles("USER")
+                .build();
+        return new InMemoryUserDetailsManager(admin, user);
     }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.httpBasic(withDefaults())
-                .sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
+                .sessionManagement(httpSecuritySessionManagementConfigurer ->
+                        httpSecuritySessionManagementConfigurer
                         .sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
-                . authorizeHttpRequests((authorizeRequests) -> authorizeRequests.requestMatchers("/")
-                        .hasRole("ADMIN")
-                        .anyRequest()
-                        .authenticated());
+                . authorizeHttpRequests((authorizeRequests) -> authorizeRequests
+                        .requestMatchers("/admin/**").hasRole("ADMIN")  // Доступ для администраторов
+                        .requestMatchers("/user/**").hasRole("USER")   // Доступ для пользователей
+                        .anyRequest().authenticated());  // Остальные запросы требуют аутентификации
         return http.build();
     }
 

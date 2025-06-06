@@ -5,11 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ru.cloudstorage</groupId>
-	<artifactId>cloud-storage-parent</artifactId>
+	<artifactId>cloud-storage-bozhko</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<java.version>17</java.version>
+		<spring-boot.version>2.6.14</spring-boot.version>
 		<junit.version>5.12.0</junit.version>
 		<postgres.version>42.7.5</postgres.version>
 		<jakarta.version>3.0.2</jakarta.version>
@@ -58,6 +59,11 @@
 	</parent>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
@@ -145,23 +151,25 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version>
+		</dependency>
 <!--		<dependency>-->
 <!--			<groupId>org.springdoc</groupId>-->
 <!--			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
 <!--			<version>2.5.0</version>-->
 <!--		</dependency>-->
 	</dependencies>
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--				<configuration>-->
-<!--					<mainClass>ru.cloudstorage.cloud_storage_bozhko.CloudStorageBozhkoApplication</mainClass>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-<!--		</plugins>-->
-<!--	</build>-->
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+			</plugin>
+		</plugins>
+	</build>
 </project>
 

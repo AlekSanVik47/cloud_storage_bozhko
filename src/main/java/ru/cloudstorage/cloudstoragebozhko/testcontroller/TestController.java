@@ -1,4 +1,4 @@
-package src.main.java.ru.cloudstorage.cloudstoragebozhko.testcontroller;
+package main.java.ru.cloudstorage.cloudstoragebozhko.testcontroller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ru.cloudstorage</groupId>
-        <artifactId>cloud-storage-parent</artifactId>
+        <artifactId>cloud-storage-bozhko</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -13,6 +13,7 @@
     <artifactId>cloud_storage_core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+
 
     <dependencies>
         <!-- Spring Data JPA -->

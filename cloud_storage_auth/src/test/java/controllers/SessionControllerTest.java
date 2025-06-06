@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class SessionControllerIntegrationTest {
-    private static final String BASE_URL = "http://localhost:8080";
+    private static final String BASE_URL = "http://localhost:8099";
     private static final String LOGIN_URL = BASE_URL + "/auth/login";
     private static final String PROTECTED_URL = BASE_URL + "/api/protected";
 

@@ -50,7 +50,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_REDIS_PORT: 6379
     ports:
-      - "8080:8080"
+      - "8099:8099"
     networks:
       - backend
     restart: unless-stopped

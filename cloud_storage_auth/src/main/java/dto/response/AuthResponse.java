@@ -7,5 +7,5 @@ import lombok.Builder;
 @Schema(name = "AuthResponse", description = "Ответ при успешной авторизации пользователя")
 public class AuthResponse {
     @Schema(description = "Имя пользователя", example = "user")
-    String username;
+    public String username;
 }

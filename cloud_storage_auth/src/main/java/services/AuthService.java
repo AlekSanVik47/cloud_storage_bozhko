@@ -20,7 +20,10 @@ Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
 UserDetailsImpl userDetails = (UserDetailsImpl) userDetailsService.loadUserByUsername(authRequest.getEmail());
 
-        AuthResponse authResponse = new AuthResponse(userDetails.getUsername(), userDetails.getAuthorities().iterator().next().getAuthority());
+        AuthResponse authResponse= AuthResponse.builder()
+                .username(userDetails.getUsername())
+                .build();
+
         return authResponse;
 
 

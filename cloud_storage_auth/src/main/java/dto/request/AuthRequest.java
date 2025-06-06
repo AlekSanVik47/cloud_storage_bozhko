@@ -9,8 +9,8 @@ import lombok.Value;
 @Schema(name = "AuthRequest", description = "Объект авторизации")
 public class AuthRequest {
     @Schema(name = "email", example = "admin", description = "Логин")
-    String email;
+    public String email;
     @Schema(name = "password", example = "admin", description = "Пароль")
-    String password;
+    public String password;
 
 }
